@@ -3,11 +3,14 @@
 # import tf
 import json
 import rospy
+import rospkg
 from gazebo_msgs.srv import SpawnModel
 from geometry_msgs.msg import Pose, Point, Quaternion
 
 
 rospy.init_node("spawn_obstacles")
+rospack = rospkg.RosPack()
+pkg_path = rospack.get_path('init_sim')
 
 # custom map
 obst_count = 3
@@ -15,7 +18,7 @@ obst_x = [4, 5, 6]
 obst_y = [1, 2, 3]
 
 # # map from json
-# with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_2_service/jsonObst.json', 'r') as f:
+# with open(pkg_path+'/src/spawn_2_service/jsonObst.json', 'r') as f:
 #     obstacles = json.load(f)
 
 # obst_count = obstacles['count']
@@ -29,7 +32,7 @@ print("Got it.")
 spawn_model = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
 
 # model file
-with open('/home/morteza/catkin_ws/src/init_sim/models/cylinder1/model.sdf', 'r') as file:
+with open(pkg_path+'/models/cylinder1/model.sdf', 'r') as file:
     model_file = file.read()
 
 # spawn models

@@ -2,11 +2,14 @@
 
 # import tf
 import rospy
+import rospkg
 from gazebo_msgs.srv import DeleteModel, SpawnModel
 from geometry_msgs.msg import Pose, Point, Quaternion
 
 
 rospy.init_node("spawn_cylinder")
+rospack = rospkg.RosPack()
+pkg_path = rospack.get_path('init_sim')
 
 # spawn service
 print("Waiting for gazebo services...")
@@ -18,7 +21,7 @@ print("Got it.")
 spawn_model = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
 
 # model file
-with open('/home/morteza/catkin_ws/src/init_sim/models/cylinder1/model.sdf', 'r') as file:
+with open(pkg_path+'/models/cylinder1/model.sdf', 'r') as file:
     model_file = file.read()
 
 # spawn model

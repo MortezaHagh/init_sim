@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import rospy
+import rospkg
 from initial_db import Initial
 from gazebo_msgs.srv import SpawnModel
 
@@ -13,6 +14,8 @@ id = init_obj.id
 
 # ros init
 rospy.init_node("spawn_robot")
+rospack = rospkg.RosPack()
+pkg_path = rospack.get_path('init_sim')
 
 # spawn service
 print("Waiting for gazebo services...")
@@ -21,7 +24,7 @@ print("Got it.")
 spawn_model = rospy.ServiceProxy("gazebo/spawn_urdf_model", SpawnModel)
 
 # robot file
-with open('/home/morteza/catkin_ws/src/init_sim/models/TB3_model.urdf', 'r') as file:
+with open(pkg_path+'/models/TB3_model.urdf', 'r') as file:
     robot_file = file.read()
 
 # spawn robot
