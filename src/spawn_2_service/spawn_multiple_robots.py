@@ -21,7 +21,7 @@ print("Got it.")
 spawn_model = rospy.ServiceProxy("gazebo/spawn_urdf_model", SpawnModel)
 
 # robot file
-with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_2_service/TB3_model.urdf', 'r') as file:
+with open('/home/morteza/catkin_ws/src/init_sim/models/TB3_model.urdf', 'r') as file:
     robot_file = file.read()
 
 # spawn robots

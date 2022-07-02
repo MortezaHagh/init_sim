@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(my_worlds)
+project(init_sim)
 
 find_package(catkin REQUIRED COMPONENTS
-  gazebo_ros
   rospy
+  gazebo_ros
   std_msgs
+  geometry_msgs
+  gazebo_msgs
 )
 
 catkin_package(

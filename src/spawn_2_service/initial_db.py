@@ -136,13 +136,13 @@ class Initial(object):
         self.robots_count = robots_count
 
     def multi_json(self):
-        with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_2_service/jsonObst.json', 'r') as f:
+        with open('/home/morteza/catkin_ws/src/init_sim/src/spawn_2_service/jsonObst.json', 'r') as f:
             obst = json.load(f)
         x = [ox*self.path_unit for ox in obst['x']]
         y = [oy*self.path_unit for oy in obst['y']]
         self.obst = {'x': x, 'y': y, 'count': obst['count']}
 
-        with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_2_service/jsonRobots.json', 'r') as f:
+        with open('/home/morteza/catkin_ws/src/init_sim/src/spawn_2_service/jsonRobots.json', 'r') as f:
             robots = json.load(f)
 
         self.robots_count = len(robots)

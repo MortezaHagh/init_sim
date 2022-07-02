@@ -17,7 +17,7 @@ rospy.init_node('spawn_single_robot')
 
 # robot model
 model_name = 'turtlebot3_'+str(id)
-with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_1_script/TB3_model.urdf', 'r') as file:
+with open('/home/morteza/catkin_ws/src/init_sim/models/TB3_model.urdf', 'r') as file:
     robot_file = file.read()
 
 # spawn parameters

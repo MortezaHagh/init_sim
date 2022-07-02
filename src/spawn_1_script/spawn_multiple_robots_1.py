@@ -17,7 +17,7 @@ robots_count = init_obj.robots_count
 rospy.init_node('spawn_multi_robots')
 
 # robot model
-with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_1_script/TB3_model.urdf', 'r') as file:
+with open('/home/morteza/catkin_ws/src/init_sim/models/TB3_model.urdf', 'r') as file:
     robot_file = file.read()
 
 # spawn robots

@@ -1,8 +1,15 @@
-# my_worlds package
+# init_sim package
+
+initialize gazebo world including robots and obstacles
+
+based on the initial_db object with 3 methods:
+  - by user (custom)
+  - from database
+  - from json file
+
+#
 
 - models
 - worlds
-  - world_03 for path planning
+- scripts
 - launch files
-  - launch worlds
-  - launch robot in the worlds

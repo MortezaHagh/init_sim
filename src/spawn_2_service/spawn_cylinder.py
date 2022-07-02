@@ -18,7 +18,7 @@ print("Got it.")
 spawn_model = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
 
 # model file
-with open('/home/morteza/catkin_ws/src/my_worlds/models/cylinder1/model.sdf', 'r') as file:
+with open('/home/morteza/catkin_ws/src/init_sim/models/cylinder1/model.sdf', 'r') as file:
     model_file = file.read()
 
 # spawn model

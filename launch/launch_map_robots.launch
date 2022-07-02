@@ -9,4 +9,12 @@
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
   </include>
+
+  <!-- <node pkg="init_sim" type="spawn_multiple_robots_1.py" name="spawn_multiple_robots_1" output="screen"/> -->
+
+  <!-- <node pkg="init_sim" type="spawn_obstacles.py" name="spawn_obstacles" output="screen"/>
+  <node pkg="init_sim" type="spawn_multiple_robots.py" name="spawn_multiple_robots" output="screen"/> -->
+
+  <node pkg="init_sim" type="spawn_map.py" name="spawn_map" output="screen"/>
+
 </launch>

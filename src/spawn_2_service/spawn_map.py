@@ -23,7 +23,7 @@ print("Got it.")
 spawn_robots = rospy.ServiceProxy("gazebo/spawn_urdf_model", SpawnModel)
 
 # robot file
-with open('/home/morteza/catkin_ws/src/my_worlds/src/spawn_2_service/TB3_model.urdf', 'r') as file:
+with open('/home/morteza/catkin_ws/src/init_sim/models/TB3_model.urdf', 'r') as file:
     robot_file = file.read()
 
 # spawn robots
@@ -48,7 +48,7 @@ print("Got it.")
 spawn_obst = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
 
 # model file
-with open('/home/morteza/catkin_ws/src/my_worlds/models/cylinder1/model2.sdf', 'r') as file2:
+with open('/home/morteza/catkin_ws/src/init_sim/models/cylinder1/model2.sdf', 'r') as file2:
     model_file = file2.read()
 
 # spawn models
