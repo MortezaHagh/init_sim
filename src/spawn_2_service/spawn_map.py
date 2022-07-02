@@ -8,7 +8,8 @@ from geometry_msgs.msg import Pose, Point, Quaternion
 
 # # get data
 # single_sys single_custome multi_sys multi_custome
-init_obj = Initial('multi_json', '')
+path_unit = 0.5
+init_obj = Initial('multi_json', '', path_unit)
 robots_initial = init_obj.robots_initial
 robots_count = init_obj.robots_count
 obst = init_obj.obst

@@ -9,7 +9,7 @@ from geometry_msgs.msg import Pose, Point, Quaternion
 
 class Initial(object):
 
-    def __init__(self, method, stype):
+    def __init__(self, method, stype, path_unit=0.5):
 
         rospack = rospkg.RosPack()
         self.pkg_path = rospack.get_path('init_sim')
@@ -17,7 +17,7 @@ class Initial(object):
         self.robots_data = []
         self.robots_count = 1
         self.id = []
-        self.path_unit = 0.5
+        self.path_unit = path_unit
 
         if stype == 'sb':
             sysfunc = self.system_db()
