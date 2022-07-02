@@ -19,7 +19,7 @@ class Initial(object):
         self.robots_count = 1
         self.id = []
 
-        if stype == 'sb':
+        if stype == 'db':
             sysfunc = self.system_db()
         elif stype == 'sql':
             sysfunc = self.system_sql()
@@ -167,5 +167,5 @@ class Initial(object):
 
 
 if __name__ == '__main__':
-    obj = Initial('multi_json', '')
+    obj = Initial('multi_json', '', '')
     print(obj.obst)

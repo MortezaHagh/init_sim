@@ -5,11 +5,28 @@ from initial_db import Initial
 from gazebo_msgs.srv import SpawnModel
 from geometry_msgs.msg import Pose, Point, Quaternion
 
+# # input args
+# args: from_database, warehouse, path_unit
+for i in range(0, len(sys.argv)):
+    if sys.argv[i] == '-from_database':
+        if sys.argv[i+1] == 'True':
+            from_database = True
+            method = 'multi_sys'
+        else:
+            from_database = False
+    if sys.argv[i] == '-warehouse':
+        warehouse = sys.argv[i+1]
+    if sys.argv[i] == '-path_unit':
+        path_unit = sys.argv[i+1]
 
 # # get data
-# single_sys single_custome multi_sys multi_custome
+# stype: db, sql
+# method: single_sys, single_custome, multi_sys, multi_custome, multi_json
+stype = ''
 path_unit = 0.5
-init_obj = Initial('multi_json', '', path_unit)
+method = 'multi_json'
+
+init_obj = Initial(method, stype, path_unit)
 robots_initial = init_obj.robots_initial
 robots_count = init_obj.robots_count
 obst = init_obj.obst
