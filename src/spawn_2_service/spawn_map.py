@@ -1,31 +1,36 @@
 #! /usr/bin/env python3
+import sys
 import rospy
 import rospkg
 from initial_db import Initial
 from gazebo_msgs.srv import SpawnModel
 from geometry_msgs.msg import Pose, Point, Quaternion
 
-# # input args
-# args: from_database, warehouse, path_unit
-for i in range(0, len(sys.argv)):
-    if sys.argv[i] == '-from_database':
-        if sys.argv[i+1] == 'True':
-            from_database = True
-            method = 'multi_sys'
-        else:
-            from_database = False
-    if sys.argv[i] == '-warehouse':
-        warehouse = sys.argv[i+1]
-    if sys.argv[i] == '-path_unit':
-        path_unit = sys.argv[i+1]
-
-# # get data
-# stype: db, sql
+# # settings
 # method: single_sys, single_custome, multi_sys, multi_custome, multi_json
+# stype: db, sql
 stype = ''
 path_unit = 0.5
 method = 'multi_json'
 
+# # input args
+# args: from_database, warehouse, path_unit, method
+for i in range(0, len(sys.argv)):
+    if sys.argv[i] == '-from_database':
+        if sys.argv[i+1] == 'True':
+            method = 'multi_sys'
+
+    if sys.argv[i] == '-warehouse':
+        warehouse = sys.argv[i+1]
+
+    if sys.argv[i] == '-path_unit':
+        path_unit = float(sys.argv[i+1])
+
+    if sys.argv[i] == '-method':
+        method = sys.argv[i+1]
+
+
+# get data
 init_obj = Initial(method, stype, path_unit)
 robots_initial = init_obj.robots_initial
 robots_count = init_obj.robots_count
