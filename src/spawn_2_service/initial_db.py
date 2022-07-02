@@ -14,10 +14,10 @@ class Initial(object):
         rospack = rospkg.RosPack()
         self.pkg_path = rospack.get_path('init_sim')
 
+        self.path_unit = path_unit
         self.robots_data = []
         self.robots_count = 1
         self.id = []
-        self.path_unit = path_unit
 
         if stype == 'sb':
             sysfunc = self.system_db()
