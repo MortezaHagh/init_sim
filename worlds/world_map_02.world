@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="world_map_02">
+    
+    <scene>
+    	<shadows>0</shadows>
+  	</scene>
+  
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun_model</uri>
+    </include>
+    
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane_model</uri>
+    </include>
+    
+    <!-- Obstacles -->
+    <model name="obstacles">
+      <include>
+        <uri>model://map_02</uri>
+      </include>
+      <pose frame="">0 0 0 1.57 0 0</pose>
+    </model>
+
+    <gravity>0 0 -9.8</gravity>
+    
+  </world>
+</sdf>

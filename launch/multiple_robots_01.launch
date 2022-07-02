@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find my_worlds)/launch/empty_world_complete.launch">
+    <arg name="world_name" value="$(find my_worlds)/worlds/empty_world.world"/> 
+    
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- <node pkg="my_worlds" type="spawn_multiple_robots_1.py" name="spawn_multiple_robots_1" output="screen"/> -->
+
+  <!-- <node pkg="my_worlds" type="spawn_obstacles.py" name="spawn_obstacles" output="screen"/>
+  <node pkg="my_worlds" type="spawn_multiple_robots.py" name="spawn_multiple_robots" output="screen"/> -->
+
+  <node pkg="my_worlds" type="spawn_map.py" name="spawn_map" output="screen"/>
+
+</launch>
